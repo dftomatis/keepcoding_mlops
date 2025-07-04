@@ -1,5 +1,3 @@
-# Generar el archivo en este entorno
-readme_content = """
 # Proyecto de Machine Learning y MLOps con MLflow y FastAPI
 
 Este repositorio contiene el desarrollo de una práctica completa de MLOps, organizada en dos grandes bloques:
@@ -11,7 +9,7 @@ Este repositorio contiene el desarrollo de una práctica completa de MLOps, orga
 
 ## Estructura del proyecto
 
-\`\`\`
+```
 /raiz
 ├── fastapi/
 │   ├── Capturas_FastAPI - Swagger UI sin ejecutar.pdf
@@ -28,7 +26,7 @@ Este repositorio contiene el desarrollo de una práctica completa de MLOps, orga
 │   └── practica_mlops.ipynb    # Notebook exploratorio
 │
 └── README.md                   # Este archivo
-\`\`\`
+```
 
 ---
 
@@ -38,26 +36,26 @@ Este repositorio contiene el desarrollo de una práctica completa de MLOps, orga
 Entrenar modelos de clasificación binaria sobre el dataset SST-2 y registrar experimentos con MLflow.
 
 **Componentes principales:**
-- \`funciones.py\`: contiene funciones reutilizables (vectorización, entrenamiento, métricas).
-- \`main.py\`: permite entrenar modelos vía línea de comandos.
-- \`environment.yml\`: define dependencias de Python y MLflow.
-- \`practica_mlops.ipynb\`: notebook exploratorio que muestra todo el flujo paso a paso.
-- Carpeta \`Images/\`: generada automáticamente por MLflow para almacenar artefactos (modelos, logs).
+- `funciones.py`: contiene funciones reutilizables (vectorización, entrenamiento, métricas).
+- `main.py`: permite entrenar modelos vía línea de comandos.
+- `environment.yml`: define dependencias de Python y MLflow.
+- `practica_mlops.ipynb`: notebook exploratorio que muestra todo el flujo paso a paso.
+- Carpeta `Images/`: generada automáticamente por MLflow para almacenar artefactos (modelos, logs).
 
 **Modelos implementados:**
-- \`LogisticRegression\` con ajuste de hiperparámetro \`C\`.
-- \`RandomForestClassifier\` con ajuste de \`n_estimators\`.
+- `LogisticRegression` con ajuste de hiperparámetro `C`.
+- `RandomForestClassifier` con ajuste de `n_estimators`.
 
 **Ejecución de la UI de MLflow:**
 
-\`\`\`bash
+```
 mlflow ui
-\`\`\`
+```
 
 Después, abre en tu navegador:
-\`\`\`
+```
 http://localhost:5000
-\`\`\`
+```
 
 ---
 
@@ -67,28 +65,28 @@ http://localhost:5000
 Crear un servicio de API REST con distintos endpoints de prueba y dos pipelines de Hugging Face.
 
 **Componentes principales:**
-- \`playground.py\`: script FastAPI con 5 endpoints:
-  - \`GET /saluda\`: saludo dinámico.
-  - \`GET /cuadrado\`: calcula el cuadrado de un número.
-  - \`GET /es_par\`: determina si un número es par.
-  - \`POST /sentiment\`: análisis de sentimiento con Hugging Face.
-  - \`POST /summary\`: resumen de texto con Hugging Face.
-- \`request.ipynb\`: notebook con ejemplos de llamadas HTTP a los endpoints.
-- \`environment.yml\`: entorno Conda que incluye \`fastapi\`, \`transformers\` y dependencias de despliegue.
-- Capturas de pantalla:
-  - \`Capturas_FastAPI - Swagger UI sin ejecutar.pdf\`: muestra la interfaz sin ejecutar peticiones.
-  - \`Capturas_FastAPI - Swagger UI.pdf\`: muestra los endpoints probados desde Swagger.
+  - `playground.py`: script FastAPI con 5 endpoints:
+  - `GET /saluda`: saludo dinámico.
+  - `GET /cuadrado`: calcula el cuadrado de un número.
+  - `GET /es_par`: determina si un número es par.
+  - `POST /sentiment`: análisis de sentimiento con Hugging Face.
+  - `POST /summary`: resumen de texto con Hugging Face.
+  - `request.ipynb`: notebook con ejemplos de llamadas HTTP a los endpoints.
+  - `environment.yml`: entorno Conda que incluye \`fastapi\`, \`transformers\` y dependencias de despliegue.
+  - Capturas de pantalla:
+    - `Capturas_FastAPI - Swagger UI sin ejecutar.pdf`: muestra la interfaz sin ejecutar peticiones.
+    - `Capturas_FastAPI - Swagger UI.pdf`: muestra los endpoints probados desde Swagger.
 
 **Ejecución del servidor:**
 
-\`\`\`bash
+```
 uvicorn playground:app --reload
-\`\`\`
+```
 
 Luego abre en el navegador:
-\`\`\`
+```
 http://127.0.0.1:8000/docs
-\`\`\`
+```
 
 **Nota:**
 El despliegue en GCP Cloud Run no se realizó por falta de tiempo.
@@ -106,19 +104,19 @@ El despliegue en GCP Cloud Run no se realizó por falta de tiempo.
 
 ### MLflow
 
-\`\`\`bash
+```
 cd MLFlow
 conda env create -f environment.yml
 conda activate sst2_mlflow_env
-\`\`\`
+```
 
 ### FastAPI
 
-\`\`\`bash
+```
 cd fastapi
 conda env create -f environment.yml
 conda activate fastapi_env
-\`\`\`
+```
 
 ---
 
@@ -130,12 +128,6 @@ Este proyecto fue realizado por el Ing. Darío Tomatis como práctica de Machine
 
 ##  Notas finales
 
-- El dataset SST-2 se descarga automáticamente desde \`datasets\`.
+- El dataset SST-2 se descarga automáticamente desde `datasets`.
 - Los modelos de Hugging Face también se descargan al primer uso.
 - Todos los experimentos y artefactos quedan almacenados en MLflow.
-- Si deseas desplegar en GCP, puedes usar \`Dockerfile\` y \`app.yaml\` como base, aunque no se incluyen en este repositorio.
-
-"""
-
-with open("README.md", "w", encoding="utf-8") as f:
-    f.write(readme_content)
