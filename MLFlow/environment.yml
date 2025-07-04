@@ -1,0 +1,16 @@
+name: sst2_mlflow_env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      - scikit-learn
+      - pandas
+      - matplotlib
+      - datasets
+      - fsspec
+      - mlflow
+      - tqdm
+      - ipykernel

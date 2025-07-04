@@ -1,0 +1,47 @@
+# Ignorar entornos virtuales de Anaconda y venv
+.env/
+.venv/
+env/
+venv/
+__pycache__/
+*.pyc
+
+# Ignorar directorios de MLflow excepto Images
+mlruns/
+
+# Archivos de caché y logs
+*.log
+*.tmp
+*.cache
+*.sqlite
+
+# Archivos de configuración de editor
+.vscode/
+.idea/
+
+# Archivos de sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos grandes opcionales (por ejemplo, modelos pesados)
+*.pkl
+*.joblib
+
+# Entornos de Hugging Face
+huggingface/
+.cache/
+.huggingface/
+
+# Archivos de salida de Jupyter
+.ipynb_checkpoints/
+
+# Archivadores
+*.zip
+*.tar.gz
+
+# Archivos de Docker
+Dockerfile
+docker-compose.yml
+
+# Otros
+*.egg-info/
